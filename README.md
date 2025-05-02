@@ -70,14 +70,13 @@ df_ratios['NetProfitMargin_Percent'] = (df_ratios['NetProfitLoss_M_EUR'] / df_ra
 # Plot
 sns.set_style("whitegrid")
 
-# Create figure with subplots (2 rows, 2 columns)
+# Create subplots
 fig, axes = plt.subplots(2, 2, figsize=(14, 10)) 
 fig.suptitle('Aiven Oy Financial Performance Trends (FYE March 2020-2024)', fontsize=16)
 
-# Get years for x-axis labels
 years = df_ratios.index.year
 
-# --- Chart 1: Revenue Trend ---
+# Chart 1: Revenue Trend
 axes[0, 0].plot(df_ratios.index, df_ratios['Revenue_M_EUR'], marker='o', linestyle='-', color='blue')
 axes[0, 0].set_title('Revenue Growth')
 axes[0, 0].set_ylabel('Revenue (€ Millions)')
@@ -85,7 +84,7 @@ axes[0, 0].set_xticks(df_ratios.index)
 axes[0, 0].set_xticklabels(years) 
 axes[0, 0].grid(True)
 
-# --- Chart 2: Operating & Net Profit/Loss Trend ---
+# Chart 2: Operating & Net Profit/Loss Trend 
 axes[0, 1].plot(df_ratios.index, df_ratios['OperatingProfitLoss_M_EUR'], marker='s', linestyle='-', label='Operating Profit/Loss')
 axes[0, 1].plot(df_ratios.index, df_ratios['NetProfitLoss_M_EUR'], marker='^', linestyle='--', label='Net Profit/Loss')
 axes[0, 1].set_title('Profitability (Absolute)')
@@ -96,7 +95,7 @@ axes[0, 1].legend()
 axes[0, 1].grid(True)
 axes[0, 1].axhline(0, color='black', linewidth=0.5, linestyle='--') 
 
-# --- Chart 3: Operating & Net Profit Margin Trend ---
+# Chart 3: Operating & Net Profit Margin Trend
 axes[1, 0].plot(df_ratios.index, df_ratios['OperatingProfitMargin_Percent'], marker='o', linestyle='-', label='Operating Profit Margin')
 axes[1, 0].plot(df_ratios.index, df_ratios['NetProfitMargin_Percent'], marker='s', linestyle='--', label='Net Profit Margin')
 axes[1, 0].set_title('Profitability Margins')
@@ -109,7 +108,7 @@ axes[1, 0].legend()
 axes[1, 0].grid(True)
 axes[1, 0].axhline(0, color='black', linewidth=0.5, linestyle='--') 
 
-# --- Chart 4: Equity Ratio Trend ---
+# Chart 4: Equity Ratio Trend
 axes[1, 1].plot(df_ratios.index, df_ratios['EquityRatio_Percent'], marker='^', linestyle='-', color='green')
 axes[1, 1].set_title('Equity Ratio (Leverage Proxy)')
 axes[1, 1].set_ylabel('Equity Ratio (%)')
@@ -120,7 +119,7 @@ axes[1, 1].set_ylim(bottom=85, top=100)
 axes[1, 1].yaxis.set_major_formatter(mtick.PercentFormatter(xmax=100.0)) 
 axes[1, 1].grid(True)
 
-# Adjust layout and display plot
+# plot
 plt.tight_layout(rect=[0, 0.03, 1, 0.95])
 plt.show()
 ```
