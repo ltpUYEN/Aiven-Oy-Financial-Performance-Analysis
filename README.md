@@ -40,7 +40,8 @@ Data was accessed via publicly available summaries from Finnish business informa
 
 ## Visualizations
 
-![Aiven FA](https://github.com/user-attachments/assets/064df502-b82f-4e6d-a863-92d1fda72451)
+![aiven](https://github.com/user-attachments/assets/09828b38-4a49-4865-8648-c4eba78a5f17)
+
 
 ## Technology Stack & Code
 
